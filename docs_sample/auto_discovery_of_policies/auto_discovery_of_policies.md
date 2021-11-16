@@ -1,6 +1,6 @@
 Auto Discovery is a policy recommendation system that suggests network and system policies based on the collected network and system logs respectively.
 
-Auto Discovery is designed for Kubernetes environments; it focuses on pods/services, and its fundamental principle is to produce a minimal network and system policy set covering maximum behavior. To do this, we actively use the label information assigned from the Kubernetes workloads/resources.
+Auto Discovery is available only for Kubernetes environments right now; it focuses on pods/services, and its fundamental principle is to produce a minimal network and system policy set covering maximum behavior. To do this, we actively use the label information assigned from the Kubernetes workloads/resources.
 
 Currently, Auto Discovery can discover (i) egress/ingress network policy for Pod-to- Pod, (External)Service, Entity, CIDR, FQDN, HTTP. And, In the System perspective it can discover (ii) process, file, and network-relevant system policy.
 
