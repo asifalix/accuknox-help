@@ -71,13 +71,13 @@ Define the basic parameters of the policy before adding the rules.
 
 To set up the network security policies select policy type to be Network-ingress or Network-egress when you define policy type. 
 
-select 'Create/Add Policy' -> 'Policy type' -> 'Network-ingress/Network-egress' 
+select `Create/Add Policy` -> `Policy type` -> `Network-ingress/Network-egress`
 
 ### **Create/Add Kubearmor(System) Policy**
 
 To set up the application security policies select policy type to be System when you define policy type. 
 
-select 'Create/Add Policy' → 'Policy type' -> 'System'
+select `Create/Add Policy` → `Policy type` -> `System`
 
 ### **Add Rules**
 
@@ -87,7 +87,7 @@ Another way is to select Policy Manager → All Policies. Selecting a policy fro
 
 The Add rule interface provides an easy way to add rules to or remove rules from a Policy; Rules will differ based on your policy type you chose.
 
-See also: Policies and Rules
+See also: [Policies and Rules](https://help.accuknox.com/policies-and-rule/policies-and-rule/)
 
 ### **Approve Policy**
 
@@ -134,7 +134,7 @@ Applying auto discovered network policies will strengthen your network security.
 5.  Select `Policy Manager` -> `Pending Approval` -> `Approve`
     
 
-See also: Auto Discovered Policies
+See also: [Auto Discovered Policies](https://help.accuknox.com/auto_discovery_of_policies/auto_discovery_of_policies/)
 
 ### **Recommended policies**
 
