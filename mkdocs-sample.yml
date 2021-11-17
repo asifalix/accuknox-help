@@ -15,6 +15,18 @@ edit_uri: "https://github.com/accuknox/accuknox-help/edit/main/docs_sample"
 # Configuration
 docs_dir: "docs_sample"
 theme:
+  features:
+   - content.code.annotate
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+
+    
   name: "material"
   language: "en"
   shortcuts:
@@ -25,8 +37,7 @@ theme:
   palette:
     primary: "blue"
     accent: "blue"
-  features:
-    - tabs
+ 
   #font:
   #text: 'Ubuntu'
   #code: 'Ubuntu Mono'
@@ -65,18 +76,22 @@ extra:
       link: "https://twitter.com/AccuKnox"
 
 # Page tree
+pages:
+- Home: 'index.md'
+- About: 'about.md'
+
 nav:
   - "Home": "index.md"
+  - "Hello world": "hello"
 # - "Getting started":
 #     - "What is Accuknox": "getting-started/what-is-accuknox.md"
 
-  - "Open Source Components":
-      - "AccuKnox Open Source": "open-source/open-source-accuknox.md"
-      - "What is Cilium": "open-source/what-is-cilium.md"
-      - "Installing Cilium": "open-source/cilium-install.md"
-      - "What is KubeArmor": "open-source/what-is-kubearmor.md"
-      - "Installing KubeArmor": "open-source/kubearmor-install.md"
-      - "Auto Discovery of Policies": "open-source/auto-policy-generation.md"
+  - "Open Source Components overview": "open-source/open-source-accuknox.md"
+  - "Cilium": "open-source/what-is-cilium.md"
+  - "Installing Cilium": "open-source/cilium-install.md"
+  - "What is KubeArmor": "open-source/what-is-kubearmor.md"
+  - "Installing KubeArmor": "open-source/kubearmor-install.md"
+  - "Auto Discovery of Policies": "open-source/auto-policy-generation.md"
 
   - "AccuKnox SaaS Components":
       - "Agent Metrics": "getting-started/agent-metrics.md"
