@@ -14,7 +14,7 @@
  - Setup a VM with Nginx as webserver and point to the HTML [UI build](https://help.accuknox.com/experian/experian-poc/#3_ui)
 
 ### 3. S3 Data Audit POC
- 1. [Setup 5 S3 buckets (5 for Data Bucket, atleast 1 bucket for logs).](https://help.accuknox.com/experian/experian-poc-accuknox-s3-access-audit/)
+ 1. [Setup 5 S3 buckets (5 for Data Bucket, atleast 1 bucket for logs).](https://help.accuknox.com/experian/s3-access-audit/)
  2. [Populate some files using the provided script.](https://help.accuknox.com/experian/experian-poc-test-scenarios/)
  3. [Setup the S3 Audit Log Reporter Agent in a VM.](https://help.accuknox.com/experian/pre-requisites-s3-audit-reportor/)
  4. Configure the data buckets and logs buckets in YAML file.
