@@ -122,7 +122,7 @@ nav:
       - "Installation & Deployment Steps for Various Modules": "experian/experian-poc.md"
       - "AccuKnox S3 Access Audit": "experian/s3-access-audit.md"
       - "S3 Data Protection Test Scenarios": "experian/experian-POC-test-scenarios.md"
-    - "Accuknox core components":
+    - "Accuknox services":
       - "Hardware Pre-requisites": "accuknox-onprem/hw-req-core-components.md" 
       - "How to install?": "accuknox-onprem/core-components-install.md"
       - "How to verify?": "accuknox-onprem/core-components-verify.md"
