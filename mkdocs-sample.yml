@@ -15,16 +15,35 @@ edit_uri: "https://github.com/accuknox/accuknox-help/edit/main/docs_sample"
 # Configuration
 docs_dir: "docs_sample"
 theme:
+  name: null
+  custom_dir: !ENV [THEME_DIR, "material"]
   features:
-   - content.code.annotate
+    - content.code.annotate
+    
     - navigation.indexes
+
     - navigation.sections
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.top
     - navigation.tracking
     - search.highlight
     - search.share
     - search.suggest
+
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
 
     
   name: "material"
@@ -34,9 +53,7 @@ theme:
     next: 78 # n
     previous: 80 # p
     search: 83 # s
-  palette:
-    primary: "blue"
-    accent: "blue"
+ 
  
   #font:
   #text: 'Ubuntu'
@@ -47,14 +64,47 @@ theme:
 
 # Extensions
 markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets
   - admonition
-  - codehilite
+  - abbr
+  - attr_list
+  - def_list
   - footnotes
-  - mdx_math:
-      enable_dollar_delimiter: true
+  - meta
+  - md_in_html
   - toc:
       permalink: true
-      separator: "_"
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid-experimental
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
 
 plugins:
   - search:
@@ -68,6 +118,25 @@ extra_javascript:
 extra_css:
   - "assets/css/custom.css"
 extra:
+  analytics: # provider: google
+    property: G-6G8J3CBYXC
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: > 
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+
+ 
+
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target=_blank>feedback form</a>.
   manifest: "manifest.json"
   social:
     - icon: "fontawesome/brands/github-alt"
@@ -82,16 +151,16 @@ pages:
 
 nav:
   - "Home": "index.md"
-  - "Hello world": "hello"
 # - "Getting started":
 #     - "What is Accuknox": "getting-started/what-is-accuknox.md"
 
-  - "Open Source Components overview": "open-source/open-source-accuknox.md"
-  - "Cilium": "open-source/what-is-cilium.md"
-  - "Installing Cilium": "open-source/cilium-install.md"
-  - "What is KubeArmor": "open-source/what-is-kubearmor.md"
-  - "Installing KubeArmor": "open-source/kubearmor-install.md"
-  - "Auto Discovery of Policies": "open-source/auto-policy-generation.md"
+  - "Open Source":
+    - "Open Source Components overview": "open-source/open-source-accuknox.md"
+    - "Cilium": "open-source/what-is-cilium.md"
+    - "Installing Cilium": "open-source/cilium-install.md"
+    - "What is KubeArmor": "open-source/what-is-kubearmor.md"
+    - "Installing KubeArmor": "open-source/kubearmor-install.md"
+    - "Auto Discovery of Policies": "open-source/auto-policy-generation.md"
 
   - "AccuKnox SaaS Components":
       - "Agent Metrics": "getting-started/agent-metrics.md"
