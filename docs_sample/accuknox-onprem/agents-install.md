@@ -20,7 +20,7 @@ Find the helm binary in the unpacked directory, and move it to its desired desti
 #### Add accuknox repository to install Agents helm package:
 
 ```sh
-helm repo add accuknox-onprem-agents https://USERNAME:PASSWORD@agents.accuknox.com/repository/accuknox-onprem-agents
+helm repo add accuknox-onprem-agents https://USERNAME:PASSWORD@onprem.accuknox.com/repository/accuknox-onprem-agents
 helm repo update
 helm search repo accuknox-onprem-agents
 ```
@@ -59,13 +59,14 @@ FYR: https://github.com/kubearmor/kubearmor-client
 
 ### Shared-informer-agent
 
-Step 1 : Create namespace has accuknox-dev-shared-informer-agent
-             Eg: kubectl create ns accuknox-dev-shared-informer-agent
+Step 1 : Create namespace has accuknox-shared-informer-agent
+
+Eg: kubectl create ns accuknox-dev-shared-informer-agent
 
 Step 2 :  Install using helm 
 
 ```sh
-helm upgrade --install shared-informer-agent-chart-1.0.2.tgz  -n accuknox-dev-shared-informer-agent
+helm upgrade --install shared-informer-agent-chart-1.0.1.tgz  -n accuknox-shared-informer-agent
 ```
 
 ## S3-audit-reporter
@@ -73,13 +74,13 @@ helm upgrade --install shared-informer-agent-chart-1.0.2.tgz  -n accuknox-dev-sh
 Step 1 : Create namespace has accuknox-dev-s3-audit-reporter
 Eg.
 ```sh
-kubectl create ns accuknox-dev-s3-audit-reporter
+kubectl create ns accuknox-s3-audit-reporter
 ```
 Step 2 :  Install using helm 
 
 Eg.
 ```sh
-helm upgrade --install s3-audit-reporter-charts-1.0.1.tgz   -n  accuknox-dev-s3-audit-reporter
+helm upgrade --install s3-audit-reporter-charts-1.0.1.tgz   -n  accuknox-s3-audit-reporter
 ```
 
 ## Feeder-Service
@@ -95,7 +96,7 @@ Step 2 :  Install using helm
 Eg.
 
 ```sh
-helm upgrade --install feeder-service-0.1.0.tgz   -n  feeder-service
+helm upgrade --install feeder-service-1.0.1.tgz  -n  feeder-service
 ```
 
 ## Knox-Containersec
@@ -110,7 +111,7 @@ Step 2 :  Install using helm
 
 Eg.
 ```sh
-helm upgrade --install knox-containersec-chart-0.1.0.tgz  -n  accuknox-agents
+helm upgrade --install knox-containersec-chart-1.0.1.tgz  -n  accuknox-agents
 ```
 
 ## Policy Enforcement Agent 
@@ -118,5 +119,5 @@ helm upgrade --install knox-containersec-chart-0.1.0.tgz  -n  accuknox-agents
 Install using helm 
 
 ```sh
-helm upgrade --install policy-enforcement-agent-1.0.2.tgz  -n  accuknox-agents
+helm upgrade --install policy-enforcement-agent-1.0.1.tgz  -n  accuknox-agents
 ```

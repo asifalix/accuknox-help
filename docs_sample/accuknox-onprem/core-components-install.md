@@ -20,13 +20,13 @@ Find the helm binary in the unpacked directory, and move it to its desired desti
 ### Add accuknox repository to install Core Components helm package:
 
 ```sh
-helm repo add accuknox-onprem-core-components https://USERNAME:PASSWORD@agents.accuknox.com/repository/accuknox-onprem-core-components
+helm repo add accuknox-onprem-services https://USERNAME:PASSWORD@onprem.accuknox.com/repository/accuknox-onprem-services
 helm repo update
-helm search repo accuknox-onprem-core-components
+helm search repo accuknox-onprem-services
 ```
 
 
-<b>Follow the below order to install core components on k8s cluster</b>
+<b>Follow the below order to install onprem-services on k8s cluster</b>
 
 ## User-management-service:
 
@@ -42,7 +42,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh 
-helm upgrade --install user-management-service-0.1.0.tgz -n accuknox-dev-user-mgmt
+helm upgrade --install user-management-service-1.0.1.tgz -n accuknox-dev-user-mgmt
 ```
 
 ## Agents-Auth-Service
@@ -60,7 +60,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install  agents-auth-service-charts-0.1.0.tgz  -n accuknox-dev-agents-auth-service
+helm upgrade --install  agents-auth-service-charts-1.0.1.tgz  -n accuknox-dev-agents-auth-service
 ```
 
 ## Anomaly-detection-management
@@ -78,7 +78,7 @@ Step 2 :  Install using helm
 Eg.
 
 ```sh
-helm upgrade --install  anomaly-detection-mgmt-chart-0.1.0.tgz  -n accuknox-dev-ad-mgmt
+helm upgrade --install  anomaly-detection-mgmt-chart-1.0.1.tgz -n accuknox-dev-ad-mgmt
 ```
 
 ## Anomaly-detection-publisher-core
@@ -94,7 +94,7 @@ Step 2 : Install using helm
 Eg. 
 
 ```sh
-helm upgrade --install anomaly-detection-publisher-core-chart-1.0.4.tgz -n accuknox-dev-ad-core
+helm upgrade --install anomaly-detection-publisher-core-chart-1.0.1.tgz -n accuknox-dev-ad-core
 ```
 
 ## Data-protection-mgmt
@@ -112,7 +112,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install data-protection-mgmt-0.1.0.tgz  -n accuknox-dev-dp-mgmt
+helm upgrade --install data-protection-mgmt-1.0.1.tgz  -n accuknox-dev-dp-mgmt
 ```
 
 ## Data-protection-core
@@ -130,12 +130,12 @@ Step 2 : Install using helm
 Eg. 
 
 ```sh
-helm upgrade --install data-protection-core-1.0.4.tgz  -n accuknox-dev-dp-core
+helm upgrade --install data-protection-core-1.0.1.tgz  -n accuknox-dev-dp-core
 ```
 
 ## Data-protection-consumer
 
-Step 1 : Create namespace has accuknox-dev-dp-core   (Since ns already this step is optional)
+Step 1 : Create namespace has accuknox-dev-dp-core   (Optional Step - Since namespace Created )
 
 Eg.
 
@@ -148,7 +148,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install data-protection-consumer-0.1.0.tgz  -n accuknox-dev-dp-core
+helm upgrade --install data-protection-consumer-1.0.1.tgz  -n accuknox-dev-dp-core
 ```
 
 ## S3-audit-report-consumer
@@ -166,7 +166,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install s3-audit-reporter-consumer-charts-0.1.0.tgz  -n accuknox-dev-s3-audit-reporter-consumer
+helm upgrade --install s3-audit-reporter-consumer-charts-1.0.1.tgz  -n accuknox-dev-s3-audit-reporter-consumer
 ```
 
 ## Dp-db-audit-log-processor
@@ -182,7 +182,7 @@ Step 2 : Install using helm
 Eg. 
 
 ```sh
-helm upgrade --install dp-db-audit-log-processor-chart-0.1.0.tgz  -n accuknox-dev-dp-core
+helm upgrade --install dp-db-audit-log-processor-chart-1.0.1.tgz  -n accuknox-dev-dp-core
 ```
 
 ## Data-classification-pipeline-consumer
@@ -200,7 +200,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install data-classification-pipeline-consumer-chart-0.1.0.tgz  -n accuknox-dev-data-classification-pipeline-consumer
+helm upgrade --install data-classification-pipeline-consumer-chart-1.0.1.tgz  -n accuknox-dev-data-classification-pipeline-consumer
 ```
 
 ## Cluster-management-service
@@ -218,7 +218,7 @@ Step 2 : Install using helm
 Eg. 
 
 ```sh
-helm upgrade --install cluster-management-service-chart-0.1.0.tgz  -n accuknox-dev-cluster-mgmt
+helm upgrade --install cluster-management-service-chart-1.0.1.tgz  -n accuknox-dev-cluster-mgmt
 ```
 
 ## Agent-data-collector
@@ -235,7 +235,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install agent-data-collector-charts-0.1.0.tgz   -n accuknox-dev-adc
+helm upgrade --install agent-data-collector-charts-1.0.1.tgz   -n accuknox-dev-adc
 ```
 
 ## Cluster-onboarding-service
@@ -253,7 +253,7 @@ Step 2 : Install using helm
 Eg. 
 
 ```sh
-helm upgrade --install cluster-onboarding-service-0.1.0.tgz  -n accuknox-dev-cluster-onboard
+helm upgrade --install cluster-onboarding-service-1.0.1.tgz  -n accuknox-dev-cluster-onboard
 ```
 
 ## Cluster-entity-daemon
@@ -271,7 +271,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install cluster-entity-daemon-chart-0.1.0.tgz    -n accuknox-dev-cluster-entity-daemon
+helm upgrade --install cluster-entity-daemon-chart-1.0.1.tgz    -n accuknox-dev-cluster-entity-daemon
 ```
 
 ## Shared-informer-service
@@ -289,7 +289,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install shared-informer-service-chart-0.1.0.tgz  -n accuknox-dev-shared-informer-service
+helm upgrade --install shared-informer-service-chart-1.0.1.tgz  -n accuknox-dev-shared-informer-service
 ```
 
 ## Data-pipeline-api
@@ -307,7 +307,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install data-pipeline-api-charts-0.1.0.tgz -n accuknox-dev-datapipeline-api
+helm upgrade --install data-pipeline-api-charts-1.0.1.tgz -n accuknox-dev-datapipeline-api
 ```
 
 ## Datapipeline-temporal
@@ -325,7 +325,7 @@ Step 2 : Install using helm
 Eg. 
 
 ```sh
-helm upgrade --install datapipeline-temporal-charts-0.1.0.tgz  -n accuknox-dev-temporal
+helm upgrade --install datapipeline-temporal-charts-1.0.1.tgz  -n accuknox-dev-temporal
 ```
 
 ## Data-pipeline-samza-jobs
@@ -343,7 +343,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install datapipeline-samza-0.1.0.tgz  -n accuknox-dev-samzajobs
+helm upgrade --install datapipeline-samza-1.0.1.tgz  -n accuknox-dev-samzajobs
 ```
 
 ## Feeder-grpc-server
@@ -361,7 +361,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install feeder-grpc-server-chart-0.1.0.tgz -n accuknox-dev-feeder-grpc-server
+helm upgrade --install feeder-grpc-server-chart-1.0.1.tgz -n accuknox-dev-feeder-grpc-server
 ```
 
 Policy-service
@@ -379,7 +379,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install policy-service-charts-0.1.0.tgz  -n accuknox-dev-policy-service
+helm upgrade --install policy-service-charts-1.0.1.tgz  -n accuknox-dev-policy-service
 ```
 
 ## Policy-daemon
@@ -397,7 +397,7 @@ Step 2 : Install using helm
 Eg. 
 
 ```sh
-helm upgrade --install policy-daemon-charts-0.1.0.tgz  -n accuknox-dev-policy-daemon
+helm upgrade --install policy-daemon-charts-1.0.1.tgz  -n accuknox-dev-policy-daemon
 ```
 
 ## Policy-provider-service
@@ -415,7 +415,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install policy-provider-service-0.1.0.tgz -n accuknox-dev-policy-provider-service
+helm upgrade --install policy-provider-service-1.0.1.tgz -n accuknox-dev-policy-provider-service
 ```
 
 ## Workload-identity-daemon
@@ -433,7 +433,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install workload-identity-daemon-chart-0.1.0.tgz  -n accuknox-dev-workload-identity-daemon
+helm upgrade --install workload-identity-daemon-chart-1.0.1.tgz  -n accuknox-dev-workload-identity-daemon
 ```
 
 ## Recommended-policy-daemon
@@ -451,7 +451,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install recommended-policy-daemon-1.0.4.tgz -n accuknox-dev-recommended-policy-daemon
+helm upgrade --install recommended-policy-daemon-1.0.1.tgz -n accuknox-dev-recommended-policy-daemon
 ```
 
 Discoveredpolicy-daemon
@@ -469,7 +469,7 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install discoveredpolicy-daemon-charts-0.1.0.tgz -n accuknox-dev-discovered-policy-daemon
+helm upgrade --install discoveredpolicy-daemon-charts-1.0.1.tgz -n accuknox-dev-discovered-policy-daemon
 ```
 
 ## Label-service
@@ -487,26 +487,9 @@ Step 2 : Install using helm
 Eg.
 
 ```sh
-helm upgrade --install label-service-chart-0.1.0.tgz  -n accuknox-dev-label-service
+helm upgrade --install label-service-chart-1.0.1.tgz  -n accuknox-dev-label-service
 ```
 
-## Label-daemon
-
-Step 1 : Create namespace has accuknox-dev-label-daemon
-
-Eg.
-
-```sh
-kubectl create ns accuknox-dev-label-daemon
-```
-
-Step 2 : Install using helm 
-
-Eg. 
-
-```sh
-helm upgrade --install label-daemon-charts-1.0.4.tgz  -n accuknox-dev-label-daemon
-```
 
 ## Knox-auto-policy
 
@@ -523,5 +506,23 @@ Step 2 : Install using helm
 Eg. 
 
 ```sh
-helm upgrade --install knox-auto-policy-chart.tgz  -n accuknox-dev-knoxautopolicy
+helm upgrade --install knox-auto-policy-chart-1.0.1.tgz  -n accuknox-dev-knoxautopolicy
 ```
+
+
+## Kvm-service
+
+Step 1 : Create namespace has accuknox-dev-kvmservice
+
+Eg.
+
+```sh
+kubectl create ns accuknox-dev-kvmservice
+```
+
+Step 2 : Install using helm 
+
+Eg. 
+
+```sh
+helm upgrade --install kvm-service-chart-1.0.1.tgz  -n accuknox-dev-kvmservice
