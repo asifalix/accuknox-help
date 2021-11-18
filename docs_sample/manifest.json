@@ -1,7 +1,7 @@
 {
-    "short_name": "MkDocs",
-    "name": "MkDocs Material Boilerplate",
-    "description": "MkDocs Material Boilerplate (Starter Kit) - Deploy documentation to hosting platforms (Netlify, GitHub Pages, GitLab Pages, and AWS Amplify Console) with Docker, pipenv, and GitHub Actions.",
+    "short_name": "'Accuknox Help'",
+    "name": "Accuknox Help Documentation",
+    "description": "Accuknox CWPP Help Documentation",
     "lang": "en-US",
     "icons": [
         {
@@ -21,8 +21,8 @@
         }
     ],
     "start_url": "index.html",
-    "background_color": "#2196F3",
-    "theme_color": "#2196F3",
+    "background_color": "#0025E8",
+    "theme_color": "#0025E8",
     "display": "standalone",
     "orientation": "portrait-primary",
     "prefer_related_applications": false
