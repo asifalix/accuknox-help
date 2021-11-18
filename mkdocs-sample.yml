@@ -145,6 +145,7 @@ nav:
       - "Loki":
         - "Purpose": "accuknox-onprem/loki-purpose.md"
         - "How to install?": "accuknox-onprem/loki-install.md"
+        - "How to verify?": "accuknox-onprem/loki-verify.md" 
     - "On-prem UI":
         - "Purpose": "accuknox-onprem/ui-onprem-purpose.md"
         - "How to install?": "accuknox-onprem/ui-onprem.md"

@@ -10,4 +10,7 @@ kubectl get pods -n accuknox-loki-logging
 kubectl get pods -n accuknox-loki-logging
 ```
 
+
+![Alt](../images/loki-verify.png)
+
 - Add endpoint in grafana datasource
