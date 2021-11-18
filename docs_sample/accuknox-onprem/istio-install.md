@@ -88,4 +88,8 @@ A VirtualService defines a set of traffic routing rules to apply when a host is 
 ```sh
 kubectl apply -f backend-api/virtual-service.yaml
 ``` 
-[No need to specify namespace] kubectl apply -f keycloak/virtual-service.yaml # [No need to specify namespace]
+[No need to specify namespace] 
+
+```sh
+kubectl apply -f keycloak/virtual-service.yaml
+```

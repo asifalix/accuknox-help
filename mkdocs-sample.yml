@@ -204,9 +204,9 @@ nav:
         - "How to verify?": "accuknox-onprem/pinot-verify.md"
     - "Experian PoC":
       - "Installation & Deployment Steps for Various Modules": "experian/experian-poc.md"
-      - "AccuKnox S3 Access Audit": "experian/experian-POC-AccuKnox-S3-Access-Audit.md"
+      - "AccuKnox S3 Access Audit": "experian/s3-access-audit.md"
       - "S3 Data Protection Test Scenarios": "experian/experian-POC-test-scenarios.md"
-    - "Accuknox core components":
+    - "Accuknox services":
       - "Hardware Pre-requisites": "accuknox-onprem/hw-req-core-components.md" 
       - "How to install?": "accuknox-onprem/core-components-install.md"
       - "How to verify?": "accuknox-onprem/core-components-verify.md"
@@ -229,6 +229,7 @@ nav:
       - "Loki":
         - "Purpose": "accuknox-onprem/loki-purpose.md"
         - "How to install?": "accuknox-onprem/loki-install.md"
+        - "How to verify?": "accuknox-onprem/loki-verify.md" 
     - "On-prem UI":
         - "Purpose": "accuknox-onprem/ui-onprem-purpose.md"
         - "How to install?": "accuknox-onprem/ui-onprem.md"
