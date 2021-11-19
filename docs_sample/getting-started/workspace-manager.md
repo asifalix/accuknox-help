@@ -1,7 +1,9 @@
 ## Workspace Manager in AccuKnox
-In Workspace Manager, user can perform various tasks such as managing users and roles, onboard cluster and adding third-party integrations etc. The workspace manager has 4 subsections. These four sections are:
+The workspace manager allows enterprise users to manage their multi-tenant clusters, user and user onboarding, onboard new clusters and manage enterprise integrations.
 
- 1. User Management
- 2. Role-Based Access Control
- 3. Onboard Cluster
- 4. Channel Integrations
+With workspace manager one can,
+
+ 1. Manage Users and their onboarding
+ 2. Enable / Disable or create granular Role-Based Access Controls (RBAC)
+ 3. Onboard New Clusters
+ 4. Configure Channel Integrations 

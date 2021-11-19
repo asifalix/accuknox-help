@@ -1,15 +1,19 @@
-<h1 align="center"></center>
-<br>Welcome to AccuKnox Help
-</h1>
 
-## Welcome to Accuknox Help
+## How this help is organized
 
-Use the left Navigation to access most of the commmon items.
+Use the top Navigation to access individual sections. Each section will have subsequent navigation appearing on the left as well as on the right to help you get granular help. A search is also available on the top right corner to allow you to look for specific topics.
 ## Quick Start
-Read more 👉 [Documentation - Getting Started]
+Read more 👉 [Documentation - Getting Started](/getting-started/overview.md)
 
-[Documentation - Getting Started]: https://help.accuknox.com/
- 
+## Cookbooks and How-tos
+- [Protecting typical Java Microservices in K8s cluster](http://docs.accuknox.com)
+- [Protecting against typical MITRE TTPs](https://docs.accuknox.com)
+- [Protecting MySQL Cluster](/https://docs.accuknox.com)
+- [Protecting against Kinseng Malware](/https://blog.accuknox.com/protecting-k8s-workloads-against-the-kinsing-malware-with-kubearmor/)
+- [Protecting Python Microservices in K8s cluster](https://docs.accuknox.com)
+- [Tutorial: Provisioning and Protecting VMS with Accuknox](https://docs.accuknox.com)
+- [Tutorial: Visualizing the Process dendogram](https://docs.accuknox.com)
+
 ## Links
  - [Cilium](https://www.accuknox.com/cilium)
  - [KubeArmor](https://www.accuknox.com/kubearmor)

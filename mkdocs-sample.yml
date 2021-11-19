@@ -1,6 +1,6 @@
 # Project information
 site_name: "AccuKnox"
-site_description: "AccuKnox is Zero Trust Run-time Kubernetes Security Solution. It provides run-time protection for your Kubernetes and other cloud workloads using Kernel Native Primitives such as AppArmor SELinux and eBPF."
+site_description: "Zero trust Runtime Kubernetes security"
 site_author: "Asif Ali"
 site_url: "https://accuknox.com/"
 
@@ -146,11 +146,18 @@ extra:
 
 # Page tree
 pages:
-- Home: 'index.md'
-- About: 'about.md'
+
 
 nav:
-  - "Home": "index.md"
+  - "Home":
+    - "Overview": "getting-started/overview.md"
+    - "Agent Installation": "getting-started/installing-agents.md"
+    - "Policy Management Life Cycle": "manage_policies/manage_policies.md"
+    - "Cluster Management": "getting-started/cluster-management.md"
+    - "Workspace Manager":
+          - "What is Workspace Manager": "getting-started/workspace-manager.md"
+          - "What is Channel Integration": "getting-started/channel-integration.md"
+
 # - "Getting started":
 #     - "What is Accuknox": "getting-started/what-is-accuknox.md"
 
@@ -162,7 +169,8 @@ nav:
     - "Installing KubeArmor": "open-source/kubearmor-install.md"
     - "Auto Discovery of Policies": "open-source/auto-policy-generation.md"
 
-  - "AccuKnox SaaS Components":
+  - "Accuknox Cloud":
+      - "Agent Installation": "getting-started/installing-agents.md"
       - "Agent Metrics": "getting-started/agent-metrics.md"
       - "Logs and Triggers": "getting-started/Logs.md"
       - "Workspace Manager":
@@ -178,7 +186,7 @@ nav:
           - "Setup and Configure S3 Audit" : "data-protection/s3/setup-and-configure.md"
           - "Audit Reporter Installation Guide" : "data-protection/s3/s3-audit-reporter-installation-guide.md"
       
-  - "On-prem Deployment":
+  - "Enterprise On Prem":
     - "Support": "accuknox-onprem/support.md"
     - "What is it?": "accuknox-onprem/what-is-ak-on-prem.md"
     - "Accuknox Architecture":
