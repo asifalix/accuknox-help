@@ -9,46 +9,11 @@ Accuknox Data Agent get MySQL connection(user, host, port, password) related det
 ## Permissions required by ADA on MySQL DBs.
 Which user created and configured in conf/agent-db-config. Give grant all permission to that user. Then only Accuknox Data Agent get DB instance and DB details. 
 
-CREATE USER 'ada_test_user'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL ON *.* TO 'ada_test_user'@'localhost';
+CREATE USER 'ada_user'@'localhost' IDENTIFIED BY 'ada@123';
+GRANT ALL ON *.* TO 'ada_user'@'localhost';
 
-## Accuknox Data Agent DB configuration
-AccuKnox Data Agent can scan more than 1 DataBase at a time. 
+## Software Requirements
+AccuKnox Data Agent supports Linux and can be run on most major Linux based OSes such as Ubuntu 18.04+, Debian 8+, CentOS 7+, Fedora and RHEL.
 
-The database to be scanned is configured through a file located at conf/agent-db-config.yaml The following is an example of a agent-db-config.yaml:
-
-apiVersion: v1
-type: agent-db-config
-data: 
-  workspace: 148
-  apiToken: 
-  databases:
-    - version: V1
-      type: mysql
-      key: asdlkm2lk3n-q23-asd-12-3
-      host: localhost
-      port: 3306
-      user: ada_test_user
-      password: password
-    - version: V1
-      type: mysql
-      key: asdlkm2lk3n-q23-asd-12-3
-      host: localhost
-      port: 5432
-      user: test
-      password: test
-
-## Installation
-Unzip AccuKnox Data Agent
-
-Edit the conf/agent-db-config.yaml
-
-Configure the agent db config to be monitored
-
-Add the workspace
-
-Add the apiToken
-
-The app.yaml and agent-db-config.yaml files must be present inside conf/ folder.
-
-Run AccuKnox Data Agent
+## Network Requirements
+AccuKnox Data Agent requires port number 443 to be open for egress. This port will be used to fetch Mysql meta data and to push metrics to AccuKnox Control Plane.
