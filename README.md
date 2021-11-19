@@ -2,9 +2,6 @@
 ## How this help is organized
 
 Use the top Navigation to access individual sections. Each section will have subsequent navigation appearing on the left as well as on the right to help you get granular help. A search is also available on the top right corner to allow you to look for specific topics.
-## Quick Start
-Read more 👉 [Documentation - Getting Started](/getting-started/overview.md)
-
 ## Cookbooks and How-tos
 - [Protecting typical Java Microservices in K8s cluster](http://docs.accuknox.com)
 - [Protecting against typical MITRE TTPs](https://docs.accuknox.com)
