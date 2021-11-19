@@ -31,7 +31,7 @@ Find the helm binary in the unpacked directory, and move it to its desired desti
 Add accuknox repository to install strimzi-kafka-operator helm package:
 
 ```sh
-helm repo add accuknox-onprem-prerequisites https://USERNAME:PASSWORD@agents.accuknox.com/repository/accuknox-onprem-prerequisites
+helm repo add accuknox-onprem-prerequisites https://USERNAME:PASSWORD@onprem.accuknox.com/repository/accuknox-onprem-prerequisites
 helm repo update
 helm search repo accuknox-onprem-prerequisites
 helm pull accuknox-onprem-prerequisites/strimzi-kafka-operator --untar
@@ -100,3 +100,25 @@ Note: ca.p12, ca.password, user.p12 and user.password are required to be used in
 FQDN (K8’s Service name) Value for Internal Cluster application connectivity.
 
 FQDN : dev-kafka-kafka-bootstrap.accuknox-dev-kafka.svc.cluster.local:9092
+
+## Get Certificates and store it
+NOTE: 
+
+1. If kafka cluster is upgraded or reinstalled, then cluster will generate new certificates and you need to change/update key-pair in the kafka clients or applications. 
+
+2. To mitigate this issue store these below certificates in safe place at the time of installing kafka(first time installation).
+
+3. Manually apply these certificates using "kubectl" command or place under templetes folder.
+And also turn off the auto certificate generation by configuring(uncomment) "clusterca" and "clientsca" to "false" in "kafka-cluster.yaml" file(below image is for your reference). Once done the changes, install/upgarde the cluster.
+
+![Alt](../images/kafka-cert-ref.png)
+
+```sh
+kubectl get secret/dev-kafka-clients-ca -o yaml > dev-kafka-clients-ca.yaml
+kubectl get secret/dev-kafka-clients-ca-cert -o yaml > dev-kafka-clients-ca-cert.yaml
+kubectl get secret/dev-kafka-cluster-ca-cert -o yaml > dev-kafka-cluster-ca-cert.yaml
+kubectl get secret/dev-kafka-cluster-ca -o yaml > dev-kafka-cluster-ca.yaml
+kubectl get secret/node-event-feeder -o yaml > node-event-feeder.yaml
+kubectl get secret/node-event-feeder-common -o yaml > node-event-feeder-common.yaml
+```
+
