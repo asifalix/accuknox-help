@@ -31,10 +31,10 @@ Find the helm binary in the unpacked directory, and move it to its desired desti
 Add accuknox repository to install Pinot helm package
 
 ```sh
-helm repo add accuknox-onprem-prerequisites https://USERNAME:PASSWORD@agents.accuknox.com/repository/accuknox-onprem-prerequisites
+helm repo add accuknox-onprem-prerequisites https://USERNAME:PASSWORD@onprem.accuknox.com/repository/accuknox-onprem-prerequisites
 helm repo update
 helm search repo accuknox-onprem-prerequisites
-helm pull accuknox-onprem-prerequisites/pinot --untar
+helm pull accuknox-onprem-prerequisites/pinot-chart --untar
 ```
 ```sh
 kubectl create namespace accuknox-dev-pinot
