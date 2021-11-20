@@ -19,7 +19,7 @@ theme:
   custom_dir: !ENV [THEME_DIR, "material"]
   features:
     - content.code.annotate
-    
+
     - navigation.indexes
 
     - navigation.sections
@@ -45,7 +45,7 @@ theme:
         icon: material/toggle-switch
         name: Switch to light mode
 
-    
+
   name: "material"
   language: "en"
   shortcuts:
@@ -53,8 +53,8 @@ theme:
     next: 78 # n
     previous: 80 # p
     search: 83 # s
- 
- 
+
+
   #font:
   #text: 'Ubuntu'
   #code: 'Ubuntu Mono'
@@ -126,14 +126,14 @@ extra:
         - icon: material/emoticon-happy-outline
           name: This page was helpful
           data: 1
-          note: > 
+          note: >
             Thanks for your feedback!
         - icon: material/emoticon-sad-outline
           name: This page could be improved
           data: 0
-          note: >- 
+          note: >-
 
- 
+
 
             Thanks for your feedback! Help us improve this page by
             using our <a href="..." target=_blank>feedback form</a>.
@@ -176,6 +176,11 @@ nav:
       - "Workspace Manager":
           - "What is Workspace Manager": "getting-started/workspace-manager.md"
           - "What is Channel Integration": "getting-started/channel-integration.md"
+          - "Integrations":
+            - "Slack": "getting-started/Slack.md"
+            - "Splunk": "getting-started/Splunk.md"
+            - "Cloudwatch": "getting-started/Cloudwatch.md"
+            - "Elastic": "getting-started/Elastic.md"
       - "Policy Management Life Cycle": "manage_policies/manage_policies.md"
       - "Policies and Rules": "policies-and-rule/policies-and-rule.md"
       - "Auto Discovered Policies": "auto_discovery_of_policies/auto_discovery_of_policies.md"
@@ -185,7 +190,7 @@ nav:
         - "User Personas and Use Cases" : "data-protection/user-personas-use-cases.md"
         - "Types of Solutions" : "data-protection/types-of-solutions.md"
 
-        - "S3": 
+        - "S3":
           - "Introduction" : "data-protection/s3/introduction.md"
 
           - "Requirements" : "data-protection/s3/requirements.md"
@@ -200,7 +205,7 @@ nav:
           - "Audit Log Exporter":
             - "Introduction": "data-protection/mysql/audit-log-exporter/introduction.md"
             - "Installation": "data-protection/mysql/audit-log-exporter/installation.md"
-      
+
   - "Enterprise On Prem":
     - "Support": "accuknox-onprem/support.md"
     - "What is it?": "accuknox-onprem/what-is-ak-on-prem.md"
@@ -209,7 +214,7 @@ nav:
       - "Purpose": "accuknox-onprem/ak-architecture-diagram-purpose.md"
     - "Pre-requisites":
       - "Hardware Pre-requisites": "accuknox-onprem/hw-req-pre-requisites.md"
-      - "Istio": 
+      - "Istio":
         - "Purpose": "accuknox-onprem/istio-purpose.md"
         - "How to install?": "accuknox-onprem/istio-install.md"
         - "How to verify?": "accuknox-onprem/istio-verify.md"
@@ -217,7 +222,7 @@ nav:
         - "Purpose": "accuknox-onprem/mysql-purpose.md"
         - "How to install?": "accuknox-onprem/mysql-install.md"
         - "How to verify?": "accuknox-onprem/mysql-verify.md"
-      - "Kafka":  
+      - "Kafka":
         - "Purpose": "accuknox-onprem/kafka-purpose.md"
         - "How to install?": "accuknox-onprem/kafka-install.md"
         - "How to verify?": "accuknox-onprem/kafka-verify.md"
@@ -230,7 +235,7 @@ nav:
       - "AccuKnox S3 Access Audit": "s3-data-protection/s3-access-audit.md"
       - "S3 Data Protection Test Scenarios": "s3-data-protection/test-scenarios.md"
     - "Accuknox services":
-      - "Hardware Pre-requisites": "accuknox-onprem/hw-req-core-components.md" 
+      - "Hardware Pre-requisites": "accuknox-onprem/hw-req-core-components.md"
       - "How to install?": "accuknox-onprem/core-components-install.md"
       - "How to verify?": "accuknox-onprem/core-components-verify.md"
     - "Accuknox agents":
@@ -244,15 +249,18 @@ nav:
         - "How to install?": "accuknox-onprem/prom-graf-install.md"
         - "How to verify?": "accuknox-onprem/prom-graf-verify.md"
     - "Logging":
-      - "Hardware Pre-requisites": "accuknox-onprem/hw-req-logging.md"   
+      - "Hardware Pre-requisites": "accuknox-onprem/hw-req-logging.md"
       - "ECK":
         - "Purpose": "accuknox-onprem/eck-purpose.md"
         - "How to install?": "accuknox-onprem/eck-install.md"
-        - "How to verify?": "accuknox-onprem/eck-verify.md" 
+        - "How to verify?": "accuknox-onprem/eck-verify.md"
       - "Loki":
         - "Purpose": "accuknox-onprem/loki-purpose.md"
         - "How to install?": "accuknox-onprem/loki-install.md"
-        - "How to verify?": "accuknox-onprem/loki-verify.md" 
+        - "How to verify?": "accuknox-onprem/loki-verify.md"
+    - "On-prem Elastic":
+        - "How to install?": "accuknox-onprem/elastic-deploy.md"
+        - "How to verify?": "accuknox-onprem/elastic.md"
     - "On-prem UI":
         - "Purpose": "accuknox-onprem/ui-onprem-purpose.md"
         - "How to install?": "accuknox-onprem/ui-onprem.md"
