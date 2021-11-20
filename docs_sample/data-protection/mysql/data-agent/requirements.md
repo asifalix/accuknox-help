@@ -1,4 +1,4 @@
-## What is Accuknox Data Agent
+## What is Accuknox Data Agent for MySQL
 Accuknox Data Agent scans for the database, tables in the databases, columns in those tables and exports them to AccuKnox SaaS for data classification and labelling.
 
 ## Hardware Requirements
@@ -17,7 +17,7 @@ AccuKnox Data Agent requires port number 443 to be open for egress. This port wi
 ## Permissions required by Accuknox Data Agent on MySQL.
 AccuKnox Data Agent requires a MySQL user and password with read-only permission to the information_schema table.
 
-### MySQL 5.6+
+### MySQL 5.7+
 ```
 CREATE USER 'ada_user'@'<host>' IDENTIFIED BY '<password>';
 GRANT SELECT ON information_schema.* TO '<host>'@'<password>';
