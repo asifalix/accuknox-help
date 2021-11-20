@@ -193,7 +193,7 @@ nav:
           - "Audit Reporter Installation Guide" : "data-protection/s3/s3-audit-reporter-installation-guide.md"
         - "MySQL":
           - "Introduction" : "data-protection/mysql/introduction.md"
-          - "Components Reqired for Installation" : "data-protection/mysql/components-for-installation.md"
+          - "Components Reqiured for Installation" : "data-protection/mysql/components-for-installation.md"
           - "AccuKnox Data Agent":
             - "Introduction": "data-protection/mysql/data-agent/introduction.md"
             - "Installation": "data-protection/mysql/data-agent/installation.md"
