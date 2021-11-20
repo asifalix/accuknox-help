@@ -185,6 +185,15 @@ nav:
           - "Requirements" : "data-protection/s3/requirements.md"
           - "Setup and Configure S3 Audit" : "data-protection/s3/setup-and-configure.md"
           - "Audit Reporter Installation Guide" : "data-protection/s3/s3-audit-reporter-installation-guide.md"
+        - "MySQL":
+          - "Introduction" : "data-protection/mysql/introduction.md"
+          - "AccuKnox Data Agent":
+            - "Introduction": "data-protection/mysql/data-agent/introduction.md"
+            - "Requirements": "data-protection/mysql/data-agent/requirements.md"
+          - "Audit Log Exporter":
+            - "Introduction": "data-protection/mysql/audit-log-exporter/introduction.md"
+            - "Requirements": "data-protection/mysql/audit-log-exporter/requirements.md"
+            - "Installation": "data-protection/mysql/audit-log-exporter/installation.md"
       
   - "Enterprise On Prem":
     - "Support": "accuknox-onprem/support.md"
