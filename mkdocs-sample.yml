@@ -190,6 +190,7 @@ nav:
           - "AccuKnox Data Agent":
             - "Introduction": "data-protection/mysql/data-agent/introduction.md"
             - "Requirements": "data-protection/mysql/data-agent/requirements.md"
+            - "Installation": "data-protection/mysql/data-agent/installation.md"
           - "Audit Log Exporter":
             - "Introduction": "data-protection/mysql/audit-log-exporter/introduction.md"
             - "Requirements": "data-protection/mysql/audit-log-exporter/requirements.md"
