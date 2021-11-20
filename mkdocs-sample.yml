@@ -180,7 +180,11 @@ nav:
       - "Policies and Rules": "policies-and-rule/policies-and-rule.md"
       - "Auto Discovered Policies": "auto_discovery_of_policies/auto_discovery_of_policies.md"
       - "Data Security":
+        - "Overview" : "data-protection/overview.md"
+
         - "User Personas and Use Cases" : "data-protection/user-personas-use-cases.md"
+        - "Types of Solutions" : "data-protection/types-of-solutions.md"
+
         - "S3": 
           - "Introduction" : "data-protection/s3/introduction.md"
 
@@ -221,7 +225,7 @@ nav:
         - "Purpose": "accuknox-onprem/pinot-purpose.md"
         - "How to install?": "accuknox-onprem/pinot-install.md"
         - "How to verify?": "accuknox-onprem/pinot-verify.md"
-    - "OnPrem S3 Protection":
+    - "S3 Data Protection":
       - "Installation & Deployment Steps for Various Modules": "s3-data-protection/overview.md"
       - "AccuKnox S3 Access Audit": "s3-data-protection/s3-access-audit.md"
       - "S3 Data Protection Test Scenarios": "s3-data-protection/test-scenarios.md"
