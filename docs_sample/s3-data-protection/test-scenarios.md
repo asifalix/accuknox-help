@@ -1,7 +1,7 @@
 # S3 Data Protection Test Scenarios:
-  **Note:** _unzipped_ **experian-poc** directory contains test scripts that will access sensitive objects in s3 data buckets.
+  **Note:** _unzipped_ **s3-data-protection-poc** directory contains test scripts that will access sensitive objects in s3 data buckets.
 ```sh
-cd experian-poc
+cd s3-data-protection-poc
 ```
 ### Accessing AWS S3 Bucket - Access sensitive data with valid credentials
 | S. No | Test scripts                                                                                                        | Expected Output                                                                                                                                                         |

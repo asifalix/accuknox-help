@@ -180,20 +180,21 @@ nav:
       - "Policies and Rules": "policies-and-rule/policies-and-rule.md"
       - "Auto Discovered Policies": "auto_discovery_of_policies/auto_discovery_of_policies.md"
       - "Data Security":
+        - "User Personas and Use Cases" : "data-protection/user-personas-use-cases.md"
         - "S3": 
           - "Introduction" : "data-protection/s3/introduction.md"
+
           - "Requirements" : "data-protection/s3/requirements.md"
           - "Setup and Configure S3 Audit" : "data-protection/s3/setup-and-configure.md"
           - "Audit Reporter Installation Guide" : "data-protection/s3/s3-audit-reporter-installation-guide.md"
         - "MySQL":
           - "Introduction" : "data-protection/mysql/introduction.md"
+          - "Components Reqired for Installation" : "data-protection/mysql/components-for-installation.md"
           - "AccuKnox Data Agent":
             - "Introduction": "data-protection/mysql/data-agent/introduction.md"
-            - "Requirements": "data-protection/mysql/data-agent/requirements.md"
             - "Installation": "data-protection/mysql/data-agent/installation.md"
           - "Audit Log Exporter":
             - "Introduction": "data-protection/mysql/audit-log-exporter/introduction.md"
-            - "Requirements": "data-protection/mysql/audit-log-exporter/requirements.md"
             - "Installation": "data-protection/mysql/audit-log-exporter/installation.md"
       
   - "Enterprise On Prem":
@@ -220,10 +221,10 @@ nav:
         - "Purpose": "accuknox-onprem/pinot-purpose.md"
         - "How to install?": "accuknox-onprem/pinot-install.md"
         - "How to verify?": "accuknox-onprem/pinot-verify.md"
-    - "Experian PoC":
-      - "Installation & Deployment Steps for Various Modules": "experian/experian-poc.md"
-      - "AccuKnox S3 Access Audit": "experian/s3-access-audit.md"
-      - "S3 Data Protection Test Scenarios": "experian/experian-POC-test-scenarios.md"
+    - "OnPrem S3 Protection":
+      - "Installation & Deployment Steps for Various Modules": "s3-data-protection/overview.md"
+      - "AccuKnox S3 Access Audit": "s3-data-protection/s3-access-audit.md"
+      - "S3 Data Protection Test Scenarios": "s3-data-protection/test-scenarios.md"
     - "Accuknox services":
       - "Hardware Pre-requisites": "accuknox-onprem/hw-req-core-components.md" 
       - "How to install?": "accuknox-onprem/core-components-install.md"
