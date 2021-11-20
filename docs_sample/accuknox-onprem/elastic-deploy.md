@@ -1,6 +1,6 @@
-### Temporal Operator Deployment
+### Elastic Operator Deployment
 
-#### 1.Please create a namespace of your choice. Example : temporal-server
+#### 1.Please create a namespace of your choice. Example : elastic-logging
 ```sh
 kubectl create ns elastic-logging
 ```
