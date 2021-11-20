@@ -17,11 +17,11 @@ With AccuKnox S3 Access Audit, users can understand what operation was performed
     - **Create data buckets:** [https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html)
     - **Configure log buckets:** [https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html](https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html)
 
- - We also assume that the S3 buckets are not public and are not accessible outside the Experian's environment.
+ - We also assume that the S3 buckets are not public and are not accessible outside the s3-data-protection's environment.
  - Upload multiple test files to each of the data buckets:
 ```sh
-unzip experian-poc.zip 
-cd experian-poc/setup
+unzip s3-data-protection-poc.zip 
+cd s3-data-protection-poc/setup
 update <access_key>, <secret_key> and <region> in upload_files.sh
 ```
 
@@ -50,7 +50,7 @@ In order to setup AccuKnox S3 Access Audit perform the following steps:
 7. Choose **No** for **Is the s3 bucket mounted inside a container workload?**
 8. Choose **No** for **Is your S3 access log buckets accessible from outside your private network?**
 9. In our scenario, we do not have S3 bucket objects accessible from outside the private network, hence click on **Done**.
-10. Follow the steps [here](https://help.accuknox.com/experian/pre-requisites-s3-audit-reportor/) to install the **AccuKnox S3 Audit Reporter Agent**.
+10. Follow the steps [here](https://help.accuknox.com/s3-data-protection/pre-requisites-s3-audit-reportor/) to install the **AccuKnox S3 Audit Reporter Agent**.
 11. Once the agent has been configured and is running, it'll start syncing the objects in the data bucket with AccuKnox Platform.
 12. Now, on the left navigation pane, under **Data Protection**, click on **Sensitive Source Labels**
 13. Enter a value for **Label**.
@@ -60,7 +60,7 @@ In order to setup AccuKnox S3 Access Audit perform the following steps:
 17. Review the selection and click on **Create**
 
 ## Testing Scenarios
-Until now, we have configured sensitive sources - the objects we think are sensitive. Now, use the AWS CLI to access the files in the data buckets as mentioned here - [POC Scenarios](https://help.accuknox.com/experian/experian-poc-test-scenarios/).
+Until now, we have configured sensitive sources - the objects we think are sensitive. Now, use the AWS CLI to access the files in the data buckets as mentioned here - [POC Scenarios](https://help.accuknox.com/s3-data-protection/s3-data-protection-poc-test-scenarios/).
 Then, at the AccuKnox Platform, on the left navigation pane, select S3 Access Logs. Now, you should be able to see the S3 access information.
 
 | Heading     	| Description                                                                                                                          	|

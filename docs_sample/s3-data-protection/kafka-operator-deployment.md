@@ -9,7 +9,7 @@ Labels - kafka:true
 ### Steps
 1. Untar the Kafka deployment files
 ```
-untar saas-kafka-Experian.tar.xz
+untar saas-kafka-s3-data-protection.tar.xz
 ```
 2. Create Namespace
 ```

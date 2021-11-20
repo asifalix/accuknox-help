@@ -1,4 +1,4 @@
-# Experian POC: Installation & Deployment Steps for Various Modules
+# S3 Data Protection - Installation & Deployment Steps for Various Modules
 
 ## Installation Flow
 ### 1. Backend Platform
@@ -11,20 +11,20 @@
     5. Setup Istio API Gateway (Internal)
 
 ### 2. UI - Frontend
- - Setup a VM with Nginx as webserver and point to the HTML [UI build](https://help.accuknox.com/experian/experian-poc/#3_ui)
+ - Setup a VM with Nginx as webserver and point to the HTML [UI build](https://help.accuknox.com/s3-data-protection/s3-data-protection-poc/#3_ui)
 
 ### 3. S3 Data Audit POC
- 1. [Setup 5 S3 buckets (5 for Data Bucket, atleast 1 bucket for logs).](https://help.accuknox.com/experian/s3-access-audit/)
- 2. [Populate some files using the provided script.](https://help.accuknox.com/experian/experian-poc-test-scenarios/)
- 3. [Setup the S3 Audit Log Reporter Agent in a VM.](https://help.accuknox.com/experian/pre-requisites-s3-audit-reportor/)
+ 1. [Setup 5 S3 buckets (5 for Data Bucket, atleast 1 bucket for logs).](https://help.accuknox.com/s3-data-protection/s3-access-audit/)
+ 2. [Populate some files using the provided script.](https://help.accuknox.com/s3-data-protection/s3-data-protection-poc-test-scenarios/)
+ 3. [Setup the S3 Audit Log Reporter Agent in a VM.](https://help.accuknox.com/s3-data-protection/pre-requisites-s3-audit-reportor/)
  4. Configure the data buckets and logs buckets in YAML file.
 
 **Note:** Please install the pre-requisites below before proceeding with deploying the modules:
 
- - [MySql Operator](https://help.accuknox.com/experian/mysql-operator-deployment/)
- - [Kafka Operator](https://help.accuknox.com/experian/kafka-operator-deployment/)
- - [Pinot Deployment Steps](https://help.accuknox.com/experian/pinot-deployment/)
- - [Istio & it's gateway installation](https://help.accuknox.com/experian/istio-depolyment/)
+ - [MySql Operator](https://help.accuknox.com/s3-data-protection/mysql-operator-deployment/)
+ - [Kafka Operator](https://help.accuknox.com/s3-data-protection/kafka-operator-deployment/)
+ - [Pinot Deployment Steps](https://help.accuknox.com/s3-data-protection/pinot-deployment/)
+ - [Istio & it's gateway installation](https://help.accuknox.com/s3-data-protection/istio-depolyment/)
 
 ##  Architecture Diagram
 ![DP architecture](https://user-images.githubusercontent.com/88204255/141889558-f6b52e7e-4d2a-4797-973f-c594cb8ebdac.png)
