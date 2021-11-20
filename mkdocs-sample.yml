@@ -179,7 +179,7 @@ nav:
           - "Integrations":
             - "Slack": "getting-started/slack-integration.md"
             - "Splunk": "getting-started/splunk-integration.md"
-            - "Cloudwatch": "getting-started/cloudwatch-integration.md"
+            - "CloudWatch": "getting-started/cloudwatch-integration.md"
             - "Elastic": "getting-started/elastic-integration.md"
       - "Policy Management Life Cycle": "manage_policies/manage_policies.md"
       - "Policies and Rules": "policies-and-rule/policies-and-rule.md"
