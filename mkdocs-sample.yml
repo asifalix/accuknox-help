@@ -184,16 +184,16 @@ nav:
 
         - "User Personas and Use Cases" : "data-protection/user-personas-use-cases.md"
         - "Types of Solutions" : "data-protection/types-of-solutions.md"
+        - "Currently Available Classification" : "data-protection/oltp-classification-types.md"
 
         - "S3": 
           - "Introduction" : "data-protection/s3/introduction.md"
-
           - "Requirements" : "data-protection/s3/requirements.md"
           - "Setup and Configure S3 Audit" : "data-protection/s3/setup-and-configure.md"
           - "Audit Reporter Installation Guide" : "data-protection/s3/s3-audit-reporter-installation-guide.md"
         - "MySQL":
           - "Introduction" : "data-protection/mysql/introduction.md"
-          - "Components Reqiured for Installation" : "data-protection/mysql/components-for-installation.md"
+          - "Components Required for Installation" : "data-protection/mysql/components-for-installation.md"
           - "AccuKnox Data Agent":
             - "Introduction": "data-protection/mysql/data-agent/introduction.md"
             - "Installation": "data-protection/mysql/data-agent/installation.md"
