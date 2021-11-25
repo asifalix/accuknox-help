@@ -1,18 +1,14 @@
-Check Pods Running status:
-
-```sh
-kubectl get pods -n accuknox-dev-kafka
-```
-![Alt](../images/kafka-pod.png)
-
 Check Kafka Cluster status:
 ```sh
-kubectl get kafka -n accuknox-dev-kafka
+kubectl get kafka -n accuknox-kafka
 ```
 ![Alt](../images/kafka.png)
 
-Check Kafka Topics status:
+Check kafka workloads status:
+
 ```sh
-kubectl get kafkaTopics -n accuknox-dev-kafka
+kubectl get all -n accuknox-kafka
 ```
-![Alt](../images/kafka-topics.png)
+![Alt](../images/kafka-verify.png)
+
+

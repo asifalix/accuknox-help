@@ -1,5 +1,5 @@
 ```sh
-kubectl get po -n accuknox-dev-pinot
+kubectl get all -n accuknox-pinot
 ```
 
 ![Alt](../images/pinot-verify.png)

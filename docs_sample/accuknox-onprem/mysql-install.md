@@ -36,22 +36,32 @@ helm search repo accuknox-onprem-prerequisites
 helm pull accuknox-onprem-prerequisites/mysql-chart --untar
 ```
 ```sh
-kubectl create namespace accuknox-dev-mysql
-kubectl config set-context $(kubectl config current-context) --namespace=accuknox-dev-mysql 
+kubectl create namespace accuknox-mysql
 cd mysql-chart 
-kubectl apply -f bundle.yaml
-kubectl apply -f cr.yaml
-kubectl apply -f secrets.yaml 
-kubectl apply -f ssl-secrets.yaml 
-kubectl apply -f backup-s3.yaml
+kubectl apply -f bundle.yaml -n accuknox-mysql
+kubectl apply -f cr.yaml -n accuknox-mysql
+kubectl apply -f secrets.yaml -n accuknox-mysql
+kubectl apply -f ssl-secrets.yaml -n accuknox-mysql
 ```
+![Alt](../images/mysql-ssl-check.png)
+
+```sh
+kubectl apply -f backup-s3.yaml -n accuknox-mysql
+```
+
+## Note
+
+1. To configure backup with gcs, add the HMAC keys in backup-s3.yaml, change the bucket name in cr.yaml and change the cron job entries as per the requirement in the cr.yaml.
+
+2. HMAC Keys will vary for cloud providers . (GCP, AZURE,  AWS
+
 
 After following steps the above steps, you will see a similar image as above 
 Run a sanitary test with below commands at the mysql namespace
 
 ```sh
-kubectl run -i --rm --tty percona-client --image=percona:8.0 --restart=Never -- bash -il
-mysql -h accuknox-dev-mysql-haproxy -uroot -proot_password
+kubectl run -i --rm --tty percona-client --image=percona:8.0 --restart=Never -n accuknox-mysql -- bash -il 
+mysql -h accuknox-mysql-haproxy -uroot -proot_password
 ```
 
 Update the passwords in secret.yaml file and run below command
@@ -63,4 +73,4 @@ Optional To configure backup with gcs add the HMAC keys in backup-s3.yaml, chang
 
 FQDN: For K8’s Service name
 
-#### accuknox-dev-mysql-haproxy.accuknox-dev-mysql.svc.cluster.local
+#### accuknox-mysql-haproxy.accuknox-mysql.svc.cluster.local

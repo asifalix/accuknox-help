@@ -48,14 +48,14 @@
 
 | Component Name      | Pinot |
 | ----------- | ----------- |
-| No of Nodes      | 3       |
+| No of Nodes      | 6       |
 |  Machine Type  |   E2 / ec2 / vm (vmware / Cloud based VM)      |
 | Image Type | Any Linux based OS with Container support ( EG: GCP COS-Containerd)  |
 | CPU Per Node | 6 |
 | Memory Per Node | 20 |
 | Disk Size Per Node  | 50 |
-| Total CPU | 18 |
-| Total Memory | 60 |
-| Total Disk Size | 150 |
+| Total CPU | 36 |
+| Total Memory | 120 |
+| Total Disk Size | 300 |
 | Taints & Lables | pinot:true |
 | Node Pool Name | db-pinot |
