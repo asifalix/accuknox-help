@@ -37,11 +37,9 @@ helm search repo accuknox-onprem-prerequisites
 helm pull accuknox-onprem-prerequisites/pinot-chart --untar
 ```
 ```sh
-kubectl create namespace accuknox-dev-pinot
-kubectl config set-context –current --namespace=accuknox-dev-pinot
+kubectl create namespace accuknox-pinot
 ```
 
 ```sh
-helm install accuknox-dev-pinot pinot
-kubectl get all
+helm install accuknox-pinot pinot -n accuknox-pinot
 ```
