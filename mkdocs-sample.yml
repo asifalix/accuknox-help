@@ -230,6 +230,9 @@ nav:
         - "Purpose": "accuknox-onprem/pinot-purpose.md"
         - "How to install?": "accuknox-onprem/pinot-install.md"
         - "How to verify?": "accuknox-onprem/pinot-verify.md"
+      - "Temporal":
+        - "Purpose": "accuknox-onprem/temporal.md"
+        - "How to install?": "accuknox-onprem/temporal-deploy.md"
     - "S3 Data Protection":
       - "Installation & Deployment Steps for Various Modules": "s3-data-protection/overview.md"
       - "AccuKnox S3 Access Audit": "s3-data-protection/s3-access-audit.md"
