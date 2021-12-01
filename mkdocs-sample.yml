@@ -168,7 +168,7 @@ nav:
     - "What is KubeArmor": "open-source/what-is-kubearmor.md"
     - "Installing KubeArmor": "open-source/kubearmor-install.md"
     - "Auto Discovery of Policies": "open-source/auto-policy-generation.md"
-    - "Policy Discovery Howto": "https://github.com/accuknox/tools/blob/main/README.md"
+    - "Policy Discovery Howto": "open-source/policy_discovery_playbook.md"
 
   - "Accuknox Cloud":
       - "Agent Installation": "getting-started/installing-agents.md"
