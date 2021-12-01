@@ -110,7 +110,7 @@ Install anyone of the following app or you can try your own k8s app.
 curl -s https://raw.githubusercontent.com/accuknox/tools/main/get_discovered_yamls.sh | bash
 ```
 
-??? Output of _get_discovered_policies.sh_
+??? Output of _get\_discovered\_policies.sh_
 	```bash
 	❯ curl -s https://raw.githubusercontent.com/accuknox/tools/main/get_discovered_yamls.sh | bash
 	Downloading discovered policies from pod=knoxautopolicy-6bf6c98dbb-pfwt9
