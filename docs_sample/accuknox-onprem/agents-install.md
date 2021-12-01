@@ -1,3 +1,11 @@
+### Note
+
+1. Onboarding the cluster to the accuknox UI (Eg. CWPP cluster).
+
+2. Fetch the cluster id and workload id for the below agents installation.
+
+![Alt](../images/onboard.png)
+
 ### Installing Helm
 This guide shows how to install the Helm CLI. Helm can be installed either from source, or from pre-built binary releases.
 
@@ -27,20 +35,32 @@ helm search repo accuknox-onprem-agents
 
 <b>Follow the below order to install agents on k8s cluster.</b>
 
-
 #### Cilium
 
-Installation using Helm
+## Installation
 
-Step 1: 
 ```sh
-helm repo add cilium https://helm.cilium.io/
+curl -L --remote-name-all https://github.com/cilium/cilium-cli/releases/latest/download/cilium-linux-amd64.tar.gz{,.sha256sum} sha256sum --check cilium-linux-amd64.tar.gz.sha256sum
+
+sudo tar xzvfC cilium-linux-amd64.tar.gz /usr/local/bin
+
+rm cilium-linux-amd64.tar.gz{,.sha256
+
+cilium install --version 1.9.8
+
+cilium hubble enable
 ```
-Step 2: 
+## Validate the ilium Installation
+
+To validate that Cilium has been properly installed, you can run
+
 ```sh
-helm install cilium cilium/cilium --version 1.10.5 --namespace kube-system
+cilium status
 ```
-FYR: https://docs.cilium.io/en/v1.10/gettingstarted/k8s-install-helm/
+
+![Alt](../images/cilium-status.png)
+
+![Alt](../images/cilium-pods.png)
 
 ## kArmor
 kArmor is a CLI client to help manage KubeArmor.
@@ -56,68 +76,56 @@ curl -sfL https://raw.githubusercontent.com/kubearmor/kubearmor-client/main/inst
 
 FYR: https://github.com/kubearmor/kubearmor-client
 
+```sh
+kubectl get pods -n kubesystem | grep kubearmor
+```
+![Alt](../kubearmor.png)
 
 ### Shared-informer-agent
 
-Step 1 : Create namespace has accuknox-shared-informer-agent
-
-Eg: kubectl create ns accuknox-dev-shared-informer-agent
-
-Step 2 :  Install using helm 
-
-```sh
-helm upgrade --install shared-informer-agent-chart-1.0.1.tgz  -n accuknox-shared-informer-agent
-```
-
-## S3-audit-reporter
-
-Step 1 : Create namespace has accuknox-dev-s3-audit-reporter
-Eg.
-```sh
-kubectl create ns accuknox-s3-audit-reporter
-```
-Step 2 :  Install using helm 
-
-Eg.
-```sh
-helm upgrade --install s3-audit-reporter-charts-1.0.1.tgz   -n  accuknox-s3-audit-reporter
-```
-
-## Feeder-Service
-
-Step 1 : Create namespace has feeder-service
-Eg.
-```sh
-kubectl create ns feeder-service
-```
-
-Step 2 :  Install using helm 
-
-Eg.
-
-```sh
-helm upgrade --install feeder-service-1.0.1.tgz  -n  feeder-service
-```
-
-## Knox-Containersec
-
-Step 1 : Create namespace has accuknox-onprem-agents
+Step 1 :
 
 ```sh
 kubectl create ns accuknox-agents
 ```
+Step 2 : 
 
-Step 2 :  Install using helm 
-
-Eg.
 ```sh
-helm upgrade --install knox-containersec-chart-1.0.1.tgz  -n  accuknox-agents
+helm upgrade --install accuknox-shared-informer-agent shared-informer-agent-chart-1.0.1.tgz -n accuknox-agents
 ```
 
 ## Policy Enforcement Agent 
 
-Install using helm 
+```sh
+kubectl create ns policy-agent
+```
 
 ```sh
-helm upgrade --install policy-enforcement-agent-1.0.1.tgz  -n  accuknox-agents
+helm upgrade --install accuknox-policy-enforcement-agent policy-enforcement-agent-1.0.1.tgz -n policy-agent
 ```
+
+```sh
+kubectl set env deploy/policy-enforcement-agent -n policy-agent workspace_id=236
+```
+
+## Feeder-Service
+
+```sh
+kubectl create ns accuknox-feeder-service
+helm upgrade --install accuknox-feeder-service feeder-service-1.0.1.tgz -n accuknox-feeder-service
+```
+## Knox-Containersec
+
+```sh
+helm upgrade --install accuknox-knox-containersec knox-containersec-chart-1.0.1.tgz -n accuknox-agents
+```
+
+
+## S3-audit-reporter
+
+```sh
+kubectl create ns accuknox-s3-audit-reporter-agent
+helm upgrade --install accuknox-s3-audit-reporter-agent s3-audit-reporter-charts-1.0.1.tgz -n accuknox-s3-audit-reporter-agent
+```
+
+
