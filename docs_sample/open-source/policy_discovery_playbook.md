@@ -1,6 +1,7 @@
 # Setup Instructions
 
 This install instructions allow you to setup sample cluster with:
+
 * Cilium CNI
 * Kubearmor Application Protection Engine
 * Auto Policy Discovery Engine
@@ -58,7 +59,7 @@ This install instructions allow you to setup sample cluster with:
 curl -s https://raw.githubusercontent.com/accuknox/tools/main/install.sh | bash
 ```
 This will install all the components. 
-!!! Output from _kubectl get pods -A_
+??? Output from _kubectl get pods -A_
 	```
 	NAMESPACE     NAME                                             READY   STATUS      RESTARTS   AGE
 	kube-system   helm-install-traefik-crd-gwlpt                   0/1     Completed   0          3h17m
@@ -80,6 +81,7 @@ This will install all the components.
 	```
 	
 	We have following installed:
+
 	* kubearmor protection engine
 	* cilium CNI
 	* Auto policy discovery engine
@@ -96,8 +98,7 @@ Install anyone of the following app or you can try your own k8s app.
 	```
 
 === "Online Boutique: Google Microservice Demo App"
-	
-	Application Reference](https://github.com/GoogleCloudPlatform/microservices-demo)
+	[Application Reference](https://github.com/GoogleCloudPlatform/microservices-demo)
 	
 	```
 	kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/microservices-demo/master/release/kubernetes-manifests.yaml
@@ -109,7 +110,7 @@ Install anyone of the following app or you can try your own k8s app.
 curl -s https://raw.githubusercontent.com/accuknox/tools/main/get_discovered_yamls.sh | bash
 ```
 
-!!! Output of _get_discovered_policies.sh_
+??? Output of _get_discovered_policies.sh_
 	```bash
 	❯ curl -s https://raw.githubusercontent.com/accuknox/tools/main/get_discovered_yamls.sh | bash
 	Downloading discovered policies from pod=knoxautopolicy-6bf6c98dbb-pfwt9
