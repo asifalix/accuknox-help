@@ -1,8 +1,8 @@
 ### Note
 
-1. Onboarding the cluster to the accuknox UI (Eg. CWPP cluster).
+Step 1 Onboarding the cluster to the accuknox UI (Eg. CWPP cluster).
 
-2. Fetch the cluster id and workload id for the below agents installation.
+Step 2 Fetch the cluster id and workload id for the below agents installation.
 
 ![Alt](../images/onboard.png)
 
@@ -39,6 +39,8 @@ helm search repo accuknox-onprem-agents
 
 ## Installation
 
+## Note 1.10.5 having crashingloopback issues, so we are using 1.9.8
+
 ```sh
 curl -L --remote-name-all https://github.com/cilium/cilium-cli/releases/latest/download/cilium-linux-amd64.tar.gz{,.sha256sum} sha256sum --check cilium-linux-amd64.tar.gz.sha256sum
 
@@ -50,19 +52,19 @@ cilium install --version 1.9.8
 
 cilium hubble enable
 ```
-## Validate the ilium Installation
+## Validate the cilium Installation
 
 To validate that Cilium has been properly installed, you can run
 
 ```sh
-cilium status
+cilium status --wait
 ```
 
 ![Alt](../images/cilium-status.png)
 
 ![Alt](../images/cilium-pods.png)
 
-Refer official site: https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/ 
+Refer official site: [https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/](https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/) 
 
 ## kArmor
 kArmor is a CLI client to help manage KubeArmor.
@@ -83,16 +85,13 @@ kubectl get pods -n kubesystem | grep kubearmor
 ```
 ![Alt](../kubearmor.png)
 
-Refer official site: https://www.accuknox.com/kubearmor/
+Refer official site: [https://www.accuknox.com/kubearmor/](https://www.accuknox.com/kubearmor/)
 
 ### Shared-informer-agent
-
-Step 1 :
 
 ```sh
 kubectl create ns accuknox-agents
 ```
-Step 2 : 
 
 ```sh
 helm upgrade --install accuknox-shared-informer-agent shared-informer-agent-chart-1.0.1.tgz -n accuknox-agents
@@ -124,12 +123,9 @@ helm upgrade --install accuknox-feeder-service feeder-service-1.0.1.tgz -n accuk
 helm upgrade --install accuknox-knox-containersec knox-containersec-chart-1.0.1.tgz -n accuknox-agents
 ```
 
-
 ## S3-audit-reporter
 
 ```sh
 kubectl create ns accuknox-s3-audit-reporter-agent
 helm upgrade --install accuknox-s3-audit-reporter-agent s3-audit-reporter-charts-1.0.1.tgz -n accuknox-s3-audit-reporter-agent
 ```
-
-
