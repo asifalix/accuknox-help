@@ -59,7 +59,7 @@ This install instructions allow you to setup sample cluster with:
 curl -s https://raw.githubusercontent.com/accuknox/tools/main/install.sh | bash
 ```
 This will install all the components. 
-??? Output from _kubectl get pods -A_
+??? "Output from _kubectl get pods -A_"
 	```
 	NAMESPACE     NAME                                             READY   STATUS      RESTARTS   AGE
 	kube-system   helm-install-traefik-crd-gwlpt                   0/1     Completed   0          3h17m
@@ -110,7 +110,7 @@ Install anyone of the following app or you can try your own k8s app.
 curl -s https://raw.githubusercontent.com/accuknox/tools/main/get_discovered_yamls.sh | bash
 ```
 
-??? Sample Output
+??? "Sample Output"
 	```
 	❯ curl -s https://raw.githubusercontent.com/accuknox/tools/main/get_discovered_yamls.sh | bash
 	Downloading discovered policies from pod=knoxautopolicy-6bf6c98dbb-pfwt9
