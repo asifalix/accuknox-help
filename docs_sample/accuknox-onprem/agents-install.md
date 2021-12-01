@@ -1,8 +1,8 @@
 ### Note
 
-Step 1 Onboarding the cluster to the accuknox UI (Eg. CWPP cluster).
+Step 1: Onboarding the cluster to the accuknox UI (Eg. CWPP cluster).
 
-Step 2 Fetch the cluster id and workload id for the below agents installation.
+Step 2: Fetch the cluster id and workload id for the below agents installation.
 
 ![Alt](../images/onboard.png)
 
@@ -37,9 +37,13 @@ helm search repo accuknox-onprem-agents
 
 #### Cilium
 
+Cilium is open source software for transparently securing the network connectivity between application services deployed using Linux container management platforms like Docker and Kubernetes.
+
+At the foundation of Cilium is a new Linux kernel technology called BPF, which enables the dynamic insertion of powerful security visibility and control logic within Linux itself. Because BPF runs inside the Linux kernel, Cilium security policies can be applied and updated without any changes to the application code or container configuration.
+
 ## Installation
 
-## Note 1.10.5 having crashingloopback issues, so we are using 1.9.8
+Note 1.10.5 having crashingloopback issues, so we are using 1.9.8
 
 ```sh
 curl -L --remote-name-all https://github.com/cilium/cilium-cli/releases/latest/download/cilium-linux-amd64.tar.gz{,.sha256sum} sha256sum --check cilium-linux-amd64.tar.gz.sha256sum
@@ -76,14 +80,12 @@ KubeArmor is a container-aware runtime security enforcement system that restrict
 curl -sfL https://raw.githubusercontent.com/kubearmor/kubearmor-client/main/install.sh | sh
 ```
 
-## To build and install, clone the repository and make install
-
-FYR: https://github.com/kubearmor/kubearmor-client
-
 ```sh
 kubectl get pods -n kubesystem | grep kubearmor
 ```
-![Alt](../kubearmor.png)
+![Alt](../images/kubearmor.png)
+
+FYR: [https://github.com/kubearmor/kubearmor-client](https://github.com/kubearmor/kubearmor-client)
 
 Refer official site: [https://www.accuknox.com/kubearmor/](https://www.accuknox.com/kubearmor/)
 
@@ -108,13 +110,17 @@ helm upgrade --install accuknox-policy-enforcement-agent policy-enforcement-agen
 ```
 
 ```sh
-kubectl set env deploy/policy-enforcement-agent -n policy-agent workspace_id=236
+kubectl set env deploy/policy-enforcement-agent -n policy-agent workspace_id=<wid>
 ```
+
+Note: wid - workspace id number fetch from Accuknox UI.
 
 ## Feeder-Service
 
 ```sh
 kubectl create ns accuknox-feeder-service
+```
+```sh
 helm upgrade --install accuknox-feeder-service feeder-service-1.0.1.tgz -n accuknox-feeder-service
 ```
 ## Knox-Containersec
@@ -127,5 +133,7 @@ helm upgrade --install accuknox-knox-containersec knox-containersec-chart-1.0.1.
 
 ```sh
 kubectl create ns accuknox-s3-audit-reporter-agent
+```
+```sh
 helm upgrade --install accuknox-s3-audit-reporter-agent s3-audit-reporter-charts-1.0.1.tgz -n accuknox-s3-audit-reporter-agent
 ```

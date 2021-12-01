@@ -23,9 +23,8 @@ kubectl get all -n temporal-server
 ![Alt](../images/temporal.png)
 
 #### 4 .Set the Default Namespace
+<b>Syntax:</b>
 ```sh
-Syntax:
-
 kubectl exec -n temporal-server -it  pod/temporaltest-admintools-<pod-id> -- /bin/bash tctl --ns default n re
 ```
 Example:
