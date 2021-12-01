@@ -1,0 +1,1 @@
+![Alt](../images/core-components-verify.png)
