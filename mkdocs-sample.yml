@@ -162,12 +162,12 @@ nav:
 #     - "What is Accuknox": "getting-started/what-is-accuknox.md"
 
   - "Open Source":
-    - "Open Source Components overview": "open-source/open-source-accuknox.md"
+    - "Overview": "open-source/open-source-accuknox.md"
     - "Cilium": "open-source/what-is-cilium.md"
     - "Installing Cilium": "open-source/cilium-install.md"
-    - "What is KubeArmor": "open-source/what-is-kubearmor.md"
+    - "KubeArmor": "open-source/what-is-kubearmor.md"
     - "Installing KubeArmor": "open-source/kubearmor-install.md"
-    - "Auto Discovery of Policies": "open-source/auto-policy-generation.md"
+      #    - "Auto Discovery of Policies": "open-source/auto-policy-generation.md"
     - "Policy Discovery Howto": "open-source/policy_discovery_playbook.md"
 
   - "Accuknox Cloud":
