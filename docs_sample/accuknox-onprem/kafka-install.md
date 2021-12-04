@@ -37,39 +37,46 @@ helm search repo accuknox-onprem-prerequisites
 helm pull accuknox-onprem-prerequisites/strimzi-kafka-operator --untar
 ```
 ```sh
-kubectl create namespace accuknox-dev-kafka
-kubectl config set-context --current --namespace=accuknox-dev-kafka
+kubectl create namespace accuknox-kafka
 ```
 ```sh
-helm install dev-kafka  strimzi-kafka-operator
+helm install accuknox-kafka  strimzi-kafka-operator -n accuknox-kafka
 ```
 
 Check the Pods deployment
 ```sh
-kubectl get pods -n accuknox-dev-kafka
+kubectl get pods -n accuknox-kafka
 ```
 
 Extract the connectivity information.
 
 ## Get bootstrap server endpoint
 ```sh
-kubectl get kafka dev-kafka -o jsonpath='{.status.listeners[?(@.type=="external")].bootstrapServers}' -n accuknox-dev-kafka
+kubectl get kafka accuknox-kafka -o jsonpath='{.status.listeners[?(@.type=="external")].bootstrapServers}' -n accuknox-kafka
 ```
 ## Get CA
 ```sh
-kubectl get secret dev-kafka-cluster-ca-cert -o jsonpath='{.data.ca\.p12}' -n accuknox-dev-kafka | base64 -d > ca.p12
+kubectl get secret accuknox-kafka-cluster-ca-cert -o jsonpath='{.data.ca\.p12}' -n accuknox-kafka | base64 -d > ca.p12
 ```
+
+Note:
+
+For any application connecting to Kafka outside the GKE, It needs to communicate via SSL/TLS authentication.
+
+We need to provide the connectivity details to the component owners who are configuring the application deployed outside GKE Cluster..
+
 ## Get CA Password
 ```sh
-kubectl get secret dev-kafka-cluster-ca-cert -o jsonpath='{.data.ca\.password}' -n accuknox-dev-kafka | base64 -d > ca.password
+kubectl get secret accuknox-kafka-cluster-ca-cert -o jsonpath='{.data.ca\.password}' -n accuknox-kafka | base64 -d > ca.password
 ```
+
 ## Get User Cert
 ```sh
-kubectl get secret/node-event-feeder-common -n accuknox-dev-kafka -o jsonpath='{.data.user\.p12}' | base64 -d > user.p12
+kubectl get secret/node-event-feeder-common -n accuknox-kafka -o jsonpath='{.data.user\.p12}' | base64 -d > user.p12
 ```
 ## Get user password
 ```sh
-kubectl get secret/node-event-feeder-common -n accuknox-dev-kafka -o jsonpath='{.data.user\.password}' | base64 -d > user.password
+kubectl get secret/node-event-feeder-common -n accuknox-kafka -o jsonpath='{.data.user\.password}' | base64 -d > user.password
 ```
 ## Convert user.p12 into base64
 ```sh
@@ -79,6 +86,7 @@ cat user.p12 | base64 > user.p12.base64
 ```sh
 cat ca.p12 | base64 > ca.p12.base64
 ```
+
 ## Convert ca.password into base64
 ```sh
 cat ca.password | base64 > ca.password.base64
@@ -91,6 +99,11 @@ cat user.password | base64 > user.password.base64
 ```sh
 openssl pkcs12 -in ca.p12 -out ca.pem
 ```
+
+![Alt](../images/ca-user-verify.png)
+
+Note: copy the password from ca.password (file)
+
 ## Convert ca.pem to base64
 ```sh
 cat ca.pem | base64 > ca.pem.base64
@@ -99,7 +112,7 @@ Note: ca.p12, ca.password, user.p12 and user.password are required to be used in
 
 FQDN (K8’s Service name) Value for Internal Cluster application connectivity.
 
-FQDN : dev-kafka-kafka-bootstrap.accuknox-dev-kafka.svc.cluster.local:9092
+FQDN : accuknox-kafka-bootstrap.accuknox-kafka.svc.cluster.local:9092
 
 ## Get Certificates and store it
 NOTE: 
@@ -114,11 +127,11 @@ And also turn off the auto certificate generation by configuring(uncomment) "clu
 ![Alt](../images/kafka-cert-ref.png)
 
 ```sh
-kubectl get secret/dev-kafka-clients-ca -o yaml > dev-kafka-clients-ca.yaml
-kubectl get secret/dev-kafka-clients-ca-cert -o yaml > dev-kafka-clients-ca-cert.yaml
-kubectl get secret/dev-kafka-cluster-ca-cert -o yaml > dev-kafka-cluster-ca-cert.yaml
-kubectl get secret/dev-kafka-cluster-ca -o yaml > dev-kafka-cluster-ca.yaml
-kubectl get secret/node-event-feeder -o yaml > node-event-feeder.yaml
-kubectl get secret/node-event-feeder-common -o yaml > node-event-feeder-common.yaml
+kubectl get secret/accuknox-clients-ca -o yaml -n accuknox-kafka > accuknox-clients-ca.yaml
+kubectl get secret/accuknox-clients-ca-cert -o yaml -n accuknox-kafka > accuknox-clients-ca-cert.yaml
+kubectl get secret/accuknox-cluster-ca-cert -o yaml -n accuknox-kafka > accuknox-cluster-ca-cert.yaml
+kubectl get secret/accuknox-cluster-ca -o yaml -n accuknox-kafka > accuknox-cluster-ca.yaml
+kubectl get secret/node-event-feeder -o yaml -n accuknox-kafka > node-event-feeder.yaml
+kubectl get secret/node-event-feeder-common -o yaml -n accuknox-kafka > node-event-feeder-common.yaml
 ```
 
