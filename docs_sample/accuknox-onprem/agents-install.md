@@ -70,14 +70,17 @@ cilium status --wait
 
 Refer official site: [https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/](https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/) 
 
-## kArmor
+## kArmor cli tool
 kArmor is a CLI client to help manage KubeArmor.
-KubeArmor is a container-aware runtime security enforcement system that restricts the behavior (such as process execution, file access, and networking operation) of containers at the system level.
+kArmor tool can be used to install/uninstall kubearmor. Additionally it can be used to view kubearmor logs and other resources used by kubearmor.
 
 ## Installation
 
 ```sh
 curl -sfL https://raw.githubusercontent.com/kubearmor/kubearmor-client/main/install.sh | sh
+```
+```sh
+karmor install	#Installs Kubearmor
 ```
 
 ```sh
